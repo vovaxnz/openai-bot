@@ -8,7 +8,7 @@ openai.api_key = OPENAI_KEY
 
 def simple_inference(message):
         result = openai.Completion.create(
-                engine="davinci", #davinci", # "curiedavinci",
+                engine="text-davinci-002", #davinci", # "curiedavinci",
                 prompt=message,
                 temperature=0.9,
                 max_tokens=200,
