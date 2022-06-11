@@ -12,18 +12,12 @@ dp = Dispatcher(bot)
 
 def _preprocess_message(text):
     translated_text = translate_text(text, language_to=['en'])
-    return f'Below is the dialogue between Ivan Vatnikov and Taras Petrenko\n\nIvan Vatnikov: {translated_text}\nTaras Petrenko:'
+    return f'The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly. \n\nPerson: {translated_text}\nAI:'
 
 
 @dp.message_handler(commands=['start'])
 async def process_start_command(message: types.Message):
     await message.reply("Привет. Можем пообщаться на любые интересующие вас темы")
-
-
-@dp.message_handler(commands=['help'])
-async def process_help_command(message: types.Message):
-    await message.reply("Привет. Можем пообщаться на любые интересующие тебя темы")
-
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
